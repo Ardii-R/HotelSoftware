@@ -65,9 +65,9 @@
             error_label.ForeColor = Color.Red;
             error_label.Location = new Point(531, 14);
             error_label.Name = "error_label";
-            error_label.Size = new Size(394, 15);
+            error_label.Size = new Size(322, 15);
             error_label.TabIndex = 36;
-            error_label.Text = "Database currently not available. It is not possible to checkout a customer";
+            error_label.Text = "Database currently not available. Customer details restricted";
             error_label.Visible = false;
             // 
             // search_comboBox

@@ -32,7 +32,7 @@ namespace HotelSoftware.User_Control
                 executeQuery(query);
 
             }
-            else if (search_comboBox.SelectedIndex == 1)                
+            else if (search_comboBox.SelectedIndex == 1)
             {
                 query = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, customer.checkout, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE checkout is not NULL";
                 executeQuery(query);
@@ -44,7 +44,7 @@ namespace HotelSoftware.User_Control
             }
         }
 
-     
+
         private void executeQuery(string query)
         {
             try
@@ -52,9 +52,10 @@ namespace HotelSoftware.User_Control
                 DataSet dataSet = functionClass.getData(query);
                 customerDetail_dataGridView.DataSource = dataSet.Tables[0];
             }
-            catch 
+            catch
             {
                 error_label.Visible = true;
+                search_comboBox.SelectedIndex = -1;
             }
         }
     }

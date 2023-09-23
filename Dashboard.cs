@@ -170,6 +170,9 @@ namespace HotelSoftware
         {
             underline_panel.Left = CustomerDetails_radioButton.Left;
 
+            UC_CustomerDetails uc_CustomerDetails = new UC_CustomerDetails();
+            addUserControl(uc_CustomerDetails);
+
             if (CustomerDetails_radioButton.Checked)
             {
                 CustomerDetails_radioButton.BackColor = Color.White;
@@ -184,10 +187,7 @@ namespace HotelSoftware
         private void CustomerDetails_radioButton_MouseHover(object sender, EventArgs e)
         {
             position = underline_panel.Location;
-            underline_panel.Left = CustomerDetails_radioButton.Left;
-
-            UC_CustomerDetails uc_CustomerDetails = new UC_CustomerDetails();
-            addUserControl(uc_CustomerDetails);
+            underline_panel.Left = CustomerDetails_radioButton.Left;;
 
             if (!CustomerDetails_radioButton.Checked)
             {
