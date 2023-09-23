@@ -175,25 +175,25 @@ namespace HotelSoftware.User_Control
                 case 1:
                     roomNumber_label.ForeColor = Color.Red;
                     MessageBox.Show("The room number is required to add a new room, please insert a valid room number.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
                 case 2:
                     roomType_label.ForeColor = Color.Red;
                     MessageBox.Show("The room type is required to add a new room, please select a room type.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
                 case 3:
                     options_label.ForeColor = Color.Red;
                     MessageBox.Show("The room option is required to add a new room, please select a room service.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
                 case 4:
                     price_label.ForeColor = Color.Red;
                     MessageBox.Show("The price is required to add a new room, please insert a valid price for the room.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
                 case 5:
