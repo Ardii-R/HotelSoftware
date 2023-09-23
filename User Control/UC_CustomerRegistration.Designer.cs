@@ -122,7 +122,7 @@
             // name_textBox
             // 
             name_textBox.Location = new Point(15, 79);
-            name_textBox.Margin = new Padding(2, 2, 2, 2);
+            name_textBox.Margin = new Padding(2);
             name_textBox.MaxLength = 35;
             name_textBox.Name = "name_textBox";
             name_textBox.PlaceholderText = "Enter full name";
@@ -134,7 +134,7 @@
             // phoneNumber_textBox
             // 
             phoneNumber_textBox.Location = new Point(15, 121);
-            phoneNumber_textBox.Margin = new Padding(2, 2, 2, 2);
+            phoneNumber_textBox.Margin = new Padding(2);
             phoneNumber_textBox.MaxLength = 12;
             phoneNumber_textBox.Name = "phoneNumber_textBox";
             phoneNumber_textBox.PlaceholderText = "Enter phone number";
@@ -146,7 +146,7 @@
             // nationality_textBox
             // 
             nationality_textBox.Location = new Point(15, 164);
-            nationality_textBox.Margin = new Padding(2, 2, 2, 2);
+            nationality_textBox.Margin = new Padding(2);
             nationality_textBox.MaxLength = 15;
             nationality_textBox.Name = "nationality_textBox";
             nationality_textBox.PlaceholderText = "Nationality";
@@ -172,7 +172,7 @@
             birthday_dateTimePicker.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point);
             birthday_dateTimePicker.Format = DateTimePickerFormat.Short;
             birthday_dateTimePicker.Location = new Point(15, 252);
-            birthday_dateTimePicker.Margin = new Padding(2, 2, 2, 2);
+            birthday_dateTimePicker.Margin = new Padding(2);
             birthday_dateTimePicker.Name = "birthday_dateTimePicker";
             birthday_dateTimePicker.Size = new Size(200, 25);
             birthday_dateTimePicker.TabIndex = 12;
@@ -184,7 +184,7 @@
             gender_comboBox.FormattingEnabled = true;
             gender_comboBox.Items.AddRange(new object[] { "Male", "Female", "Other" });
             gender_comboBox.Location = new Point(15, 206);
-            gender_comboBox.Margin = new Padding(2, 2, 2, 2);
+            gender_comboBox.Margin = new Padding(2);
             gender_comboBox.Name = "gender_comboBox";
             gender_comboBox.Size = new Size(193, 23);
             gender_comboBox.TabIndex = 13;
@@ -193,7 +193,7 @@
             // address_textBox
             // 
             address_textBox.Location = new Point(369, 121);
-            address_textBox.Margin = new Padding(2, 2, 2, 2);
+            address_textBox.Margin = new Padding(2);
             address_textBox.MaxLength = 50;
             address_textBox.Name = "address_textBox";
             address_textBox.PlaceholderText = "Enter address";
@@ -204,7 +204,7 @@
             // id_textBox
             // 
             id_textBox.Location = new Point(369, 79);
-            id_textBox.Margin = new Padding(2, 2, 2, 2);
+            id_textBox.Margin = new Padding(2);
             id_textBox.MaxLength = 6;
             id_textBox.Name = "id_textBox";
             id_textBox.PlaceholderText = "Enter id";
@@ -253,7 +253,7 @@
             checkIn_dateTimePicker.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point);
             checkIn_dateTimePicker.Format = DateTimePickerFormat.Short;
             checkIn_dateTimePicker.Location = new Point(369, 164);
-            checkIn_dateTimePicker.Margin = new Padding(2, 2, 2, 2);
+            checkIn_dateTimePicker.Margin = new Padding(2);
             checkIn_dateTimePicker.Name = "checkIn_dateTimePicker";
             checkIn_dateTimePicker.Size = new Size(200, 25);
             checkIn_dateTimePicker.TabIndex = 19;
@@ -314,7 +314,7 @@
             service_comboBox.FormattingEnabled = true;
             service_comboBox.Items.AddRange(new object[] { "None", "Half board", "Full board", "All-inclusive" });
             service_comboBox.Location = new Point(726, 119);
-            service_comboBox.Margin = new Padding(2, 2, 2, 2);
+            service_comboBox.Margin = new Padding(2);
             service_comboBox.Name = "service_comboBox";
             service_comboBox.Size = new Size(193, 23);
             service_comboBox.TabIndex = 28;
@@ -327,7 +327,7 @@
             roomType_comboBox.FormattingEnabled = true;
             roomType_comboBox.Items.AddRange(new object[] { "Standard", "Twin room", "Deluxe twin room", "Junior Suite", "Presidental Suite" });
             roomType_comboBox.Location = new Point(726, 79);
-            roomType_comboBox.Margin = new Padding(2, 2, 2, 2);
+            roomType_comboBox.Margin = new Padding(2);
             roomType_comboBox.Name = "roomType_comboBox";
             roomType_comboBox.Size = new Size(193, 23);
             roomType_comboBox.TabIndex = 29;
@@ -339,7 +339,7 @@
             roomNumber_comboBox.FlatStyle = FlatStyle.Popup;
             roomNumber_comboBox.FormattingEnabled = true;
             roomNumber_comboBox.Location = new Point(726, 163);
-            roomNumber_comboBox.Margin = new Padding(2, 2, 2, 2);
+            roomNumber_comboBox.Margin = new Padding(2);
             roomNumber_comboBox.Name = "roomNumber_comboBox";
             roomNumber_comboBox.Size = new Size(193, 23);
             roomNumber_comboBox.TabIndex = 30;
@@ -350,7 +350,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.customer_registration;
             pictureBox1.Location = new Point(867, 230);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(74, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -360,7 +360,7 @@
             // price_textBox
             // 
             price_textBox.Location = new Point(726, 206);
-            price_textBox.Margin = new Padding(2, 2, 2, 2);
+            price_textBox.Margin = new Padding(2);
             price_textBox.MaxLength = 6;
             price_textBox.Name = "price_textBox";
             price_textBox.PlaceholderText = "Enter price";
@@ -377,7 +377,7 @@
             alloteRoom_button.FlatStyle = FlatStyle.Popup;
             alloteRoom_button.ForeColor = Color.White;
             alloteRoom_button.Location = new Point(726, 248);
-            alloteRoom_button.Margin = new Padding(2, 2, 2, 2);
+            alloteRoom_button.Margin = new Padding(2);
             alloteRoom_button.Name = "alloteRoom_button";
             alloteRoom_button.Size = new Size(133, 32);
             alloteRoom_button.TabIndex = 33;
@@ -428,7 +428,7 @@
             Controls.Add(phoneNumber_label);
             Controls.Add(name_label);
             Controls.Add(heading_label);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UC_CustomerRegistration";
             Size = new Size(956, 292);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

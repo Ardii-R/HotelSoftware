@@ -183,11 +183,12 @@
             // 
             error_label.AutoSize = true;
             error_label.ForeColor = Color.Red;
-            error_label.Location = new Point(543, 14);
+            error_label.Location = new Point(531, 14);
             error_label.Name = "error_label";
             error_label.Size = new Size(394, 15);
             error_label.TabIndex = 35;
             error_label.Text = "Database currently not available. It is not possible to checkout a customer";
+            error_label.Visible = false;
             // 
             // UC_Checkout
             // 
