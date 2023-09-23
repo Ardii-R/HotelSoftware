@@ -127,6 +127,10 @@ namespace HotelSoftware
         {
             underline_panel.Left = CheckOut_radioButton.Left;
 
+            UC_Checkout uC_Checkout = new UC_Checkout();
+            addUserControl(uC_Checkout);
+
+
             if (CheckOut_radioButton.Checked)
             {
                 CheckOut_radioButton.BackColor = Color.White;
