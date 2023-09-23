@@ -35,7 +35,7 @@
             options_label = new Label();
             price_label = new Label();
             roomNumber_textBox = new TextBox();
-            service_comboBox = new ComboBox();
+            options_comboBox = new ComboBox();
             roomType_comboBox = new ComboBox();
             addRoom_button = new Button();
             price_textBox = new TextBox();
@@ -126,18 +126,18 @@
             roomNumber_textBox.TextChanged += roomNumber_textBox_TextChanged;
             roomNumber_textBox.KeyPress += roomNumber_textBox_KeyPress;
             // 
-            // service_comboBox
+            // options_comboBox
             // 
-            service_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            service_comboBox.FlatStyle = FlatStyle.Popup;
-            service_comboBox.FormattingEnabled = true;
-            service_comboBox.Items.AddRange(new object[] { "None", "Half board", "Full board", "All-inclusive" });
-            service_comboBox.Location = new Point(680, 155);
-            service_comboBox.Margin = new Padding(2);
-            service_comboBox.Name = "service_comboBox";
-            service_comboBox.Size = new Size(184, 23);
-            service_comboBox.TabIndex = 8;
-            service_comboBox.TextChanged += service_comboBox_TextChanged;
+            options_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            options_comboBox.FlatStyle = FlatStyle.Popup;
+            options_comboBox.FormattingEnabled = true;
+            options_comboBox.Items.AddRange(new object[] { "None", "Half board", "Full board", "All-inclusive" });
+            options_comboBox.Location = new Point(680, 155);
+            options_comboBox.Margin = new Padding(2);
+            options_comboBox.Name = "options_comboBox";
+            options_comboBox.Size = new Size(184, 23);
+            options_comboBox.TabIndex = 8;
+            options_comboBox.TextChanged += service_comboBox_TextChanged;
             // 
             // roomType_comboBox
             // 
@@ -197,7 +197,7 @@
             Controls.Add(price_textBox);
             Controls.Add(addRoom_button);
             Controls.Add(roomType_comboBox);
-            Controls.Add(service_comboBox);
+            Controls.Add(options_comboBox);
             Controls.Add(roomNumber_textBox);
             Controls.Add(price_label);
             Controls.Add(options_label);
@@ -223,7 +223,7 @@
         private Label options_label;
         private Label price_label;
         private TextBox roomNumber_textBox;
-        private ComboBox service_comboBox;
+        private ComboBox options_comboBox;
         private ComboBox roomType_comboBox;
         private Button addRoom_button;
         private TextBox price_textBox;
