@@ -38,8 +38,7 @@ namespace HotelSoftware
 
         public DataSet getData(string query) 
         {
-    
-
+   
             if (databaseConnection)
             {
                 SqlConnection sqlConnection = getConnection();

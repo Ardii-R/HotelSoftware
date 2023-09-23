@@ -53,7 +53,7 @@ namespace HotelSoftware.User_Control
                 string customerCheckin = checkIn_dateTimePicker.Text;
 
 
-                string insertCustomer = "INSERT INTO Customer (name,phone,nationality,gender,birthday,personal_id,customer_address,checkin,checkout,Checkout_exit,roomid ) values ('"+customerName+"', '"+customerPhoneNumber+"', '"+customerNationality+"', '"+customerGender+"', '"+customerBirthday+"', '"+customerID+"', '"+customerAdress+", '"+customerCheckin+"', '"+customerCheckin+"', '"+roomID+ "') update rooms set booked='YES' where roomNo = '"+roomNumber_comboBox.Text+"'";
+                string insertCustomer = "INSERT INTO Customer (customer_name,phone,nationality,gender,birthday,personal_id,customer_address,checkin,roomid ) values ('" + customerName+"', '"+customerPhoneNumber+"', '"+customerNationality+"', '"+customerGender+"', '"+customerBirthday+"', '"+customerID+"', '"+customerAdress+"', '"+customerCheckin+"', "+roomID+") update rooms set booked='YES' where roomNo = '"+roomNumber_comboBox.Text+"'";
                 functionClass.setData(insertCustomer, $"The room {roomNumber_comboBox.Text} is assigned to {customerName} ");
 
 

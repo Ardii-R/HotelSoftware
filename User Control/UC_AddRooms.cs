@@ -52,7 +52,7 @@ namespace HotelSoftware.User_Control
                     // extract data from textboxes 
                     string roomNumber = roomNumber_textBox.Text;
                     string roomType = roomType_comboBox.Text;
-                    string roomService = service_comboBox.Text;
+                    string roomService = options_comboBox.Text;
                     int price = int.Parse(price_textBox.Text);
 
 
@@ -76,12 +76,12 @@ namespace HotelSoftware.User_Control
                 // extract data from textboxes 
                 string roomNumber = roomNumber_textBox.Text;
                 string roomType = roomType_comboBox.Text;
-                string roomService = service_comboBox.Text;
+                string roomOptions = options_comboBox.Text;
                 int price = int.Parse(price_textBox.Text);
 
 
                 // insert data into database
-                insert = "INSERT INTO rooms (roomNo,roomTyp,roomService,price) values ('" + roomNumber + ",'" + roomType + "','" + roomService + "'," + price + " )";
+                insert = "INSERT INTO rooms (roomNo,roomTyp,roomOptions,price) values ('" + roomNumber + "','" + roomType + "','" + roomOptions + "'," + price + ")";
                 functionClass.setData(query, $"Added new room: {roomType} with price of {price} Euro");
 
                 UC_AddRooms_Load(this, null);
@@ -154,7 +154,7 @@ namespace HotelSoftware.User_Control
                 caseSwitch = 2;
 
             }
-            else if (string.IsNullOrEmpty(service_comboBox.Text))
+            else if (string.IsNullOrEmpty(options_comboBox.Text))
             {
                 caseSwitch = 3;
             }
@@ -237,7 +237,7 @@ namespace HotelSoftware.User_Control
         {
             int price = 0;
             string roomType = roomType_comboBox.Text;
-            string roomOption = service_comboBox.Text;
+            string roomOption = options_comboBox.Text;
 
             price += roomPrice[roomType];
             price += optionPrice[roomOption];
@@ -251,7 +251,7 @@ namespace HotelSoftware.User_Control
         {
             roomNumber_textBox.Clear();
             roomType_comboBox.SelectedIndex = -1;
-            service_comboBox.SelectedIndex = -1;
+            options_comboBox.SelectedIndex = -1;
             price_textBox.Clear();
         }
     }
