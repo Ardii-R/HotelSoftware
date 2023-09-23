@@ -186,6 +186,9 @@ namespace HotelSoftware
             position = underline_panel.Location;
             underline_panel.Left = CustomerDetails_radioButton.Left;
 
+            UC_CustomerDetails uc_CustomerDetails = new UC_CustomerDetails();
+            addUserControl(uc_CustomerDetails);
+
             if (!CustomerDetails_radioButton.Checked)
             {
                 CustomerDetails_radioButton.BackColor = Color.White;

@@ -22,7 +22,6 @@ namespace HotelSoftware.User_Control
 
         private void UC_Checkout_Load(object sender, EventArgs e)
         {
-            error_label.Visible = false;
             try
             {
                 string loadQuery = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE checkout = 'NO'";
@@ -71,19 +70,19 @@ namespace HotelSoftware.User_Control
 
         private void checkout_button_Click(object sender, EventArgs e)
         {
-            if(nameCheckout_textBox.Text.Length > 0)                        // Textbox is readonly, so checkout is only possible if customer is selected in checkout_dataGridView
+            if (nameCheckout_textBox.Text.Length > 0)                        // Textbox is readonly, so checkout is only possible if customer is selected in checkout_dataGridView
             {
-                DialogResult dialogResult = MessageBox.Show($"Are you sure that you want to checkout the customer: {nameCheckout_textBox.Text} with room number: {roomNumbertextBox.Text}" , "Checkout", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show($"Are you sure that you want to checkout the customer: {nameCheckout_textBox.Text} with room number: {roomNumbertextBox.Text}", "Checkout", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {
                     string checkoutDate = Checkout_dateTimePicker.Text;
-                    string checkoutQuery = "UPDATE Customer set Checkout_exit = 'YES', checkout '"+checkoutDate+ "' WHERE customer_id = "+ID+" UPDATE rooms set booked = 'NO' WHERE roomNo = '"+roomNumbertextBox.Text+"' ";
+                    string checkoutQuery = "UPDATE Customer set Checkout_exit = 'YES', checkout '" + checkoutDate + "' WHERE customer_id = " + ID + " UPDATE rooms set booked = 'NO' WHERE roomNo = '" + roomNumbertextBox.Text + "' ";
 
                     functionCalss.setData(checkoutQuery, "Checkout successfully");
                     UC_Checkout_Load(this, null);
 
-                   
+
 
                 }
             }
