@@ -30,9 +30,7 @@ namespace HotelSoftware
 
         private void closing_button_Click(object sender, EventArgs e)
         {
-            this.Close();
-            UserLogin mainWindow = new UserLogin();
-            mainWindow.Show();
+            Application.Exit();
 
         }
 
@@ -187,7 +185,7 @@ namespace HotelSoftware
         private void CustomerDetails_radioButton_MouseHover(object sender, EventArgs e)
         {
             position = underline_panel.Location;
-            underline_panel.Left = CustomerDetails_radioButton.Left;;
+            underline_panel.Left = CustomerDetails_radioButton.Left; ;
 
             if (!CustomerDetails_radioButton.Checked)
             {
@@ -210,6 +208,9 @@ namespace HotelSoftware
         private void employee_radioButton_CheckedChanged(object sender, EventArgs e)
         {
             underline_panel.Left = employee_radioButton.Left;
+
+            UC_Employee uC_Employee = new UC_Employee();
+            addUserControl(uC_Employee);
 
             if (employee_radioButton.Checked)
             {
@@ -244,11 +245,6 @@ namespace HotelSoftware
                 employee_radioButton.ForeColor = Color.White;
             }
         }
-
-
-
-
-
 
 
     }

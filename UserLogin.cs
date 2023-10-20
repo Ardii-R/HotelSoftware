@@ -10,12 +10,7 @@ namespace HotelSoftware
         public UserLogin()
         {
             InitializeComponent();
-            checkDatabaseConnection();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            //checkDatabaseConnection();
         }
 
         private void checkDatabaseConnection()

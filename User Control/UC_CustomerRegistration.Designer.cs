@@ -88,7 +88,7 @@
             phoneNumber_label.AutoSize = true;
             phoneNumber_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             phoneNumber_label.ForeColor = Color.FromArgb(19, 15, 64);
-            phoneNumber_label.Location = new Point(15, 102);
+            phoneNumber_label.Location = new Point(15, 119);
             phoneNumber_label.Margin = new Padding(2, 0, 2, 0);
             phoneNumber_label.Name = "phoneNumber_label";
             phoneNumber_label.Size = new Size(123, 19);
@@ -100,7 +100,7 @@
             nationality_label.AutoSize = true;
             nationality_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             nationality_label.ForeColor = Color.FromArgb(19, 15, 64);
-            nationality_label.Location = new Point(15, 146);
+            nationality_label.Location = new Point(15, 230);
             nationality_label.Margin = new Padding(2, 0, 2, 0);
             nationality_label.Name = "nationality_label";
             nationality_label.Size = new Size(98, 19);
@@ -112,7 +112,7 @@
             gender_label.AutoSize = true;
             gender_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             gender_label.ForeColor = Color.FromArgb(19, 15, 64);
-            gender_label.Location = new Point(15, 188);
+            gender_label.Location = new Point(15, 177);
             gender_label.Margin = new Padding(2, 0, 2, 0);
             gender_label.Name = "gender_label";
             gender_label.Size = new Size(69, 19);
@@ -121,7 +121,7 @@
             // 
             // name_textBox
             // 
-            name_textBox.Location = new Point(15, 79);
+            name_textBox.Location = new Point(15, 84);
             name_textBox.Margin = new Padding(2);
             name_textBox.MaxLength = 35;
             name_textBox.Name = "name_textBox";
@@ -133,7 +133,7 @@
             // 
             // phoneNumber_textBox
             // 
-            phoneNumber_textBox.Location = new Point(15, 121);
+            phoneNumber_textBox.Location = new Point(15, 142);
             phoneNumber_textBox.Margin = new Padding(2);
             phoneNumber_textBox.MaxLength = 12;
             phoneNumber_textBox.Name = "phoneNumber_textBox";
@@ -145,7 +145,7 @@
             // 
             // nationality_textBox
             // 
-            nationality_textBox.Location = new Point(15, 164);
+            nationality_textBox.Location = new Point(15, 257);
             nationality_textBox.Margin = new Padding(2);
             nationality_textBox.MaxLength = 15;
             nationality_textBox.Name = "nationality_textBox";
@@ -160,7 +160,7 @@
             birthday_label.AutoSize = true;
             birthday_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             birthday_label.ForeColor = Color.FromArgb(19, 15, 64);
-            birthday_label.Location = new Point(15, 233);
+            birthday_label.Location = new Point(354, 60);
             birthday_label.Margin = new Padding(2, 0, 2, 0);
             birthday_label.Name = "birthday_label";
             birthday_label.Size = new Size(112, 19);
@@ -171,7 +171,7 @@
             // 
             birthday_dateTimePicker.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point);
             birthday_dateTimePicker.Format = DateTimePickerFormat.Short;
-            birthday_dateTimePicker.Location = new Point(15, 252);
+            birthday_dateTimePicker.Location = new Point(354, 84);
             birthday_dateTimePicker.Margin = new Padding(2);
             birthday_dateTimePicker.Name = "birthday_dateTimePicker";
             birthday_dateTimePicker.Size = new Size(200, 25);
@@ -183,7 +183,7 @@
             gender_comboBox.FlatStyle = FlatStyle.Popup;
             gender_comboBox.FormattingEnabled = true;
             gender_comboBox.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            gender_comboBox.Location = new Point(15, 206);
+            gender_comboBox.Location = new Point(15, 198);
             gender_comboBox.Margin = new Padding(2);
             gender_comboBox.Name = "gender_comboBox";
             gender_comboBox.Size = new Size(193, 23);
@@ -192,7 +192,7 @@
             // 
             // address_textBox
             // 
-            address_textBox.Location = new Point(369, 121);
+            address_textBox.Location = new Point(354, 198);
             address_textBox.Margin = new Padding(2);
             address_textBox.MaxLength = 50;
             address_textBox.Name = "address_textBox";
@@ -203,7 +203,7 @@
             // 
             // id_textBox
             // 
-            id_textBox.Location = new Point(369, 79);
+            id_textBox.Location = new Point(354, 142);
             id_textBox.Margin = new Padding(2);
             id_textBox.MaxLength = 6;
             id_textBox.Name = "id_textBox";
@@ -217,7 +217,7 @@
             checkIn_label.AutoSize = true;
             checkIn_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             checkIn_label.ForeColor = Color.FromArgb(19, 15, 64);
-            checkIn_label.Location = new Point(369, 146);
+            checkIn_label.Location = new Point(354, 230);
             checkIn_label.Margin = new Padding(2, 0, 2, 0);
             checkIn_label.Name = "checkIn_label";
             checkIn_label.Size = new Size(78, 19);
@@ -229,7 +229,7 @@
             address_label.AutoSize = true;
             address_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             address_label.ForeColor = Color.FromArgb(19, 15, 64);
-            address_label.Location = new Point(369, 102);
+            address_label.Location = new Point(354, 177);
             address_label.Margin = new Padding(2, 0, 2, 0);
             address_label.Name = "address_label";
             address_label.Size = new Size(70, 19);
@@ -241,7 +241,7 @@
             id_label.AutoSize = true;
             id_label.Font = new Font("Century Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             id_label.ForeColor = Color.FromArgb(19, 15, 64);
-            id_label.Location = new Point(369, 60);
+            id_label.Location = new Point(354, 119);
             id_label.Margin = new Padding(2, 0, 2, 0);
             id_label.Name = "id_label";
             id_label.Size = new Size(69, 19);
@@ -252,7 +252,7 @@
             // 
             checkIn_dateTimePicker.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point);
             checkIn_dateTimePicker.Format = DateTimePickerFormat.Short;
-            checkIn_dateTimePicker.Location = new Point(369, 164);
+            checkIn_dateTimePicker.Location = new Point(354, 255);
             checkIn_dateTimePicker.Margin = new Padding(2);
             checkIn_dateTimePicker.Name = "checkIn_dateTimePicker";
             checkIn_dateTimePicker.Size = new Size(200, 25);
@@ -390,7 +390,7 @@
             database_error_label.AutoSize = true;
             database_error_label.Font = new Font("Century Gothic", 10F, FontStyle.Italic, GraphicsUnit.Point);
             database_error_label.ForeColor = Color.Red;
-            database_error_label.Location = new Point(343, 248);
+            database_error_label.Location = new Point(277, 272);
             database_error_label.Name = "database_error_label";
             database_error_label.Size = new Size(0, 17);
             database_error_label.TabIndex = 34;
