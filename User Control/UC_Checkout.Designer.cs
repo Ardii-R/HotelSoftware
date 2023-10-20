@@ -95,6 +95,7 @@
             // nameCheckout_textBox
             // 
             nameCheckout_textBox.AllowDrop = true;
+            nameCheckout_textBox.BackColor = Color.White;
             nameCheckout_textBox.Location = new Point(15, 249);
             nameCheckout_textBox.Margin = new Padding(2);
             nameCheckout_textBox.MaxLength = 35;
@@ -154,6 +155,7 @@
             // roomNumbertextBox
             // 
             roomNumbertextBox.AllowDrop = true;
+            roomNumbertextBox.BackColor = Color.White;
             roomNumbertextBox.Location = new Point(301, 255);
             roomNumbertextBox.Margin = new Padding(2);
             roomNumbertextBox.MaxLength = 35;
