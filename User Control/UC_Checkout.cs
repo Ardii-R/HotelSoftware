@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
+
 
 namespace HotelSoftware.User_Control
 {
@@ -24,7 +17,7 @@ namespace HotelSoftware.User_Control
         {
             try
             {
-                string loadQuery = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE checkout = 'NO'";
+                string loadQuery = "Select Customer.customer_id, Customer.customer_name, Customer.phone, Customer.nationality, Customer.gender, Customer.birthday, Customer.personal_id, Customer.customer_address, Customer.checkin, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from Customer inner joins rooms on Customer.roomid = rooms.roomid WHERE checkout = 'NO'";
                 DataSet dataSet = functionCalss.getData(loadQuery);
                 checkout_dataGridView.DataSource = dataSet.Tables[0];
             }
@@ -40,7 +33,7 @@ namespace HotelSoftware.User_Control
         {
             try
             {
-                string searchQuery = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE customer_name LIKE'" + namesearch_textBox.Text + "%' and checkout = 'NO'";
+                string searchQuery = "Select Customer.customer_id, Customer.customer_name, Customer.phone, Customer.nationality, Customer.gender, Customer.birthday, Customer.personal_id, Customer.customer_address, Customer.checkin, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from Customer inner join rooms on Customer.roomid = rooms.roomid WHERE customer_name LIKE'" + namesearch_textBox.Text + "%' and checkout = 'NO'";
                 DataSet dataSet = functionCalss.getData(searchQuery);
                 checkout_dataGridView.DataSource = dataSet.Tables[0];
 

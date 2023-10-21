@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelSoftware.User_Control
 {
@@ -52,10 +42,23 @@ namespace HotelSoftware.User_Control
                 string customerAdress = address_textBox.Text;
                 string customerCheckin = checkIn_dateTimePicker.Text;
 
+                string customerRegistrationQuery = "INSERT INTO dbo.Customer (customer_name,phone,nationality,gender,birthday,personal_id,customer_address,checkin,roomid) VALUES (@customerName,@customerPhoneNumber,@customerNationality, @customerGender,@customerBirthday,@customerID,@customerAdress, @customerCheckin, @roomID)";
+                SqlCommand customerRegistrationCommand = new SqlCommand(customerRegistrationQuery, functionClass.getConnection());
+                customerRegistrationCommand.Parameters.AddWithValue("@customerName", customerName);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerNationality", customerNationality);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerGender", customerGender);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerBirthday", customerBirthday);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerID", customerID);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerAdress", customerAdress);
+                customerRegistrationCommand.Parameters.AddWithValue("@customerCheckin", customerCheckin);
+                customerRegistrationCommand.Parameters.AddWithValue("@roomid", roomid);
+                customerRegistrationCommand.ExecuteNonQuery();
 
-                string insertCustomer = "INSERT INTO Customer (customer_name,phone,nationality,gender,birthday,personal_id,customer_address,checkin,roomid ) values ('" + customerName + "', '" + customerPhoneNumber + "', '" + customerNationality + "', '" + customerGender + "', '" + customerBirthday + "', '" + customerID + "', '" + customerAdress + "', '" + customerCheckin + "', " + roomID + ") update rooms set booked='YES' where roomNo = '" + roomNumber_comboBox.Text + "'";
-                functionClass.setData(insertCustomer, $"The room {roomNumber_comboBox.Text} is assigned to {customerName} ");
 
+                string updateRoomQuery = $"update dbo.rooms set booked = 'YES' where roomNo = {roomNumber_comboBox.Text}";
+                SqlCommand updateRoomCommand = new SqlCommand(updateRoomQuery, functionClass.getConnection());
+                updateRoomCommand.ExecuteNonQuery();
 
                 clearAll();
             }
@@ -130,7 +133,7 @@ namespace HotelSoftware.User_Control
             price_textBox.Clear();
         }
 
-        int roomID;
+        int roomid;
         private void roomNumber_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             roomNumber_label.ForeColor = Color.FromArgb(19, 15, 64);
@@ -141,7 +144,7 @@ namespace HotelSoftware.User_Control
                 DataSet ds = functionClass.getData(query);
                 price_textBox.Text = ds.Tables[0].Rows[0][0].ToString();
 
-                roomID = int.Parse(ds.Tables[0].Rows[0][1].ToString());
+                roomid = int.Parse(ds.Tables[0].Rows[0][1].ToString());
 
             }
             catch (Exception ex)

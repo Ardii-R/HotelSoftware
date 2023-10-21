@@ -1,3 +1,4 @@
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 
@@ -29,6 +30,7 @@ namespace HotelSoftware
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            /*
             if ((username_textBox.Text == "User") && (password_textBox.Text == "pwd"))
             {
                 //TODO 
@@ -42,6 +44,23 @@ namespace HotelSoftware
                 errorLabel.Visible = true;
                 password_textBox.Clear();
             }
+            */
+
+            string query = "Select username, pwd from employee where username = '"+username_textBox.Text+"' and pwd = '"+password_textBox.Text+"'";
+            DataSet ds = functionClass.getData(query);
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            else
+            {
+                errorLabel.Visible = true;
+                password_textBox.Clear();
+            }
+            
         }
 
         private void username_textBox_KeyDown(object sender, KeyEventArgs e)
