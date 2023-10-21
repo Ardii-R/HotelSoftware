@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             heading_label = new Label();
-            tabControl1 = new TabControl();
+            Emp_tabControll = new TabControl();
             employee_tabPage_regist = new TabPage();
             empGender_comboBox = new ComboBox();
             freeID_label = new Label();
@@ -48,19 +48,19 @@
             id_label = new Label();
             employee_tabPage_details = new TabPage();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            empDetail_DataGridView = new DataGridView();
             employee_tabPage_delete = new TabPage();
             delEmployee_button = new Button();
-            dataGridView2 = new DataGridView();
+            empDelete_DataGridView = new DataGridView();
             delID_textBox = new TextBox();
             deleteID_label = new Label();
             error_label = new Label();
-            tabControl1.SuspendLayout();
+            Emp_tabControll.SuspendLayout();
             employee_tabPage_regist.SuspendLayout();
             employee_tabPage_details.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)empDetail_DataGridView).BeginInit();
             employee_tabPage_delete.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)empDelete_DataGridView).BeginInit();
             SuspendLayout();
             // 
             // heading_label
@@ -74,16 +74,17 @@
             heading_label.TabIndex = 2;
             heading_label.Text = "Employee";
             // 
-            // tabControl1
+            // Emp_tabControll
             // 
-            tabControl1.Controls.Add(employee_tabPage_regist);
-            tabControl1.Controls.Add(employee_tabPage_details);
-            tabControl1.Controls.Add(employee_tabPage_delete);
-            tabControl1.Location = new Point(15, 59);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(938, 218);
-            tabControl1.TabIndex = 3;
+            Emp_tabControll.Controls.Add(employee_tabPage_regist);
+            Emp_tabControll.Controls.Add(employee_tabPage_details);
+            Emp_tabControll.Controls.Add(employee_tabPage_delete);
+            Emp_tabControll.Location = new Point(15, 59);
+            Emp_tabControll.Name = "Emp_tabControll";
+            Emp_tabControll.SelectedIndex = 0;
+            Emp_tabControll.Size = new Size(938, 218);
+            Emp_tabControll.TabIndex = 3;
+            Emp_tabControll.SelectedIndexChanged += tabEmployee_selectedIndex;
             // 
             // employee_tabPage_regist
             // 
@@ -305,7 +306,7 @@
             employee_tabPage_details.BackColor = Color.White;
             employee_tabPage_details.BorderStyle = BorderStyle.Fixed3D;
             employee_tabPage_details.Controls.Add(label1);
-            employee_tabPage_details.Controls.Add(dataGridView1);
+            employee_tabPage_details.Controls.Add(empDetail_DataGridView);
             employee_tabPage_details.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             employee_tabPage_details.Location = new Point(4, 24);
             employee_tabPage_details.Name = "employee_tabPage_details";
@@ -325,23 +326,23 @@
             label1.TabIndex = 3;
             label1.Text = "Employee Details";
             // 
-            // dataGridView1
+            // empDetail_DataGridView
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(9, 50);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(911, 130);
-            dataGridView1.TabIndex = 0;
+            empDetail_DataGridView.BackgroundColor = Color.White;
+            empDetail_DataGridView.BorderStyle = BorderStyle.Fixed3D;
+            empDetail_DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            empDetail_DataGridView.Location = new Point(9, 50);
+            empDetail_DataGridView.Name = "empDetail_DataGridView";
+            empDetail_DataGridView.RowTemplate.Height = 25;
+            empDetail_DataGridView.Size = new Size(911, 130);
+            empDetail_DataGridView.TabIndex = 0;
             // 
             // employee_tabPage_delete
             // 
             employee_tabPage_delete.BackColor = Color.White;
             employee_tabPage_delete.BorderStyle = BorderStyle.Fixed3D;
             employee_tabPage_delete.Controls.Add(delEmployee_button);
-            employee_tabPage_delete.Controls.Add(dataGridView2);
+            employee_tabPage_delete.Controls.Add(empDelete_DataGridView);
             employee_tabPage_delete.Controls.Add(delID_textBox);
             employee_tabPage_delete.Controls.Add(deleteID_label);
             employee_tabPage_delete.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -365,17 +366,18 @@
             delEmployee_button.TabIndex = 35;
             delEmployee_button.Text = "Delete";
             delEmployee_button.UseVisualStyleBackColor = false;
+            delEmployee_button.Click += delEmployee_button_Click;
             // 
-            // dataGridView2
+            // empDelete_DataGridView
             // 
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(12, 53);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(911, 130);
-            dataGridView2.TabIndex = 2;
+            empDelete_DataGridView.BackgroundColor = Color.White;
+            empDelete_DataGridView.BorderStyle = BorderStyle.Fixed3D;
+            empDelete_DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            empDelete_DataGridView.Location = new Point(12, 53);
+            empDelete_DataGridView.Name = "empDelete_DataGridView";
+            empDelete_DataGridView.RowTemplate.Height = 25;
+            empDelete_DataGridView.Size = new Size(911, 130);
+            empDelete_DataGridView.TabIndex = 2;
             // 
             // delID_textBox
             // 
@@ -384,6 +386,7 @@
             delID_textBox.PlaceholderText = "Enter employee ID";
             delID_textBox.Size = new Size(169, 26);
             delID_textBox.TabIndex = 1;
+            delID_textBox.KeyPress += empDeleteID_KeyPress;
             // 
             // deleteID_label
             // 
@@ -412,20 +415,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(error_label);
-            Controls.Add(tabControl1);
+            Controls.Add(Emp_tabControll);
             Controls.Add(heading_label);
             Name = "UC_Employee";
             Size = new Size(956, 292);
             Load += UC_Employee_Load;
-            tabControl1.ResumeLayout(false);
+            Emp_tabControll.ResumeLayout(false);
             employee_tabPage_regist.ResumeLayout(false);
             employee_tabPage_regist.PerformLayout();
             employee_tabPage_details.ResumeLayout(false);
             employee_tabPage_details.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)empDetail_DataGridView).EndInit();
             employee_tabPage_delete.ResumeLayout(false);
             employee_tabPage_delete.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)empDelete_DataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -433,7 +436,7 @@
         #endregion
 
         private Label heading_label;
-        private TabControl tabControl1;
+        private TabControl Emp_tabControll;
         private TabPage employee_tabPage_regist;
         private TabPage employee_tabPage_details;
         private TabPage employee_tabPage_delete;
@@ -453,10 +456,10 @@
         private Label freeID_label;
         private Button empRegister_button;
         private ComboBox empGender_comboBox;
-        private DataGridView dataGridView1;
+        private DataGridView empDetail_DataGridView;
         private Label label1;
         private Button delEmployee_button;
-        private DataGridView dataGridView2;
+        private DataGridView empDelete_DataGridView;
         private TextBox delID_textBox;
         private Label deleteID_label;
         private Label error_label;

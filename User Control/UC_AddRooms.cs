@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace HotelSoftware.User_Control
@@ -52,18 +49,23 @@ namespace HotelSoftware.User_Control
                     // extract data from textboxes 
                     string roomNumber = roomNumber_textBox.Text;
                     string roomType = roomType_comboBox.Text;
-                    string roomService = options_comboBox.Text;
+                    string roomOptions = options_comboBox.Text;
                     int price = int.Parse(price_textBox.Text);
 
 
                     // insert data into database
-                    insert = "INSERT INTO rooms (roomNo,roomTyp,roomService,price) values ('" + roomNumber + ",'" + roomType + "','" + roomService + "'," + price + " )";
-                    functionClass.setData(query, $"Added new room: {roomType} with price of {price} Euro");
-
+                    String query = "INSERT INTO dbo.rooms (roomNo,roomTyp,roomOptions,price) VALUES (@roomNumber,@roomType,@roomOptions, @price)";
+                    SqlCommand command = new SqlCommand(query, functionClass.getConnection());
+                    command.Parameters.AddWithValue("@roomNumber", roomNumber);
+                    command.Parameters.AddWithValue("@roomType", roomType);
+                    command.Parameters.AddWithValue("@roomOptions", roomOptions);
+                    command.Parameters.AddWithValue("@price", price);
+                    command.ExecuteNonQuery();
                     UC_AddRooms_Load(this, null);
                     clearPage();
+                
 
-                }
+            }
                 else if (dialogResult == DialogResult.No)
                 {
                     price_textBox.Clear();
@@ -79,11 +81,13 @@ namespace HotelSoftware.User_Control
                 string roomOptions = options_comboBox.Text;
                 int price = int.Parse(price_textBox.Text);
 
-
-                // insert data into database
-                insert = "INSERT INTO rooms (roomNo,roomTyp,roomOptions,price) values ('" + roomNumber + "','" + roomType + "','" + roomOptions + "'," + price + ")";
-                functionClass.setData(query, $"Added new room: {roomType} with price of {price} Euro");
-
+                String query = "INSERT INTO dbo.rooms (roomNo,roomTyp,roomOptions,price) VALUES (@roomNumber,@roomType,@roomOptions, @price)";
+                SqlCommand command = new SqlCommand(query, functionClass.getConnection());
+                command.Parameters.AddWithValue("@roomNumber",roomNumber);
+                command.Parameters.AddWithValue("@roomType", roomType);
+                command.Parameters.AddWithValue("@roomOptions", roomOptions);
+                command.Parameters.AddWithValue("@price", price);
+                command.ExecuteNonQuery();
                 UC_AddRooms_Load(this, null);
                 clearPage();
             }

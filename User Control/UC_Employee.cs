@@ -22,21 +22,20 @@ namespace HotelSoftware.User_Control
             if (checkEmployeeRegister())
             {
                 string EmpName = empName_textBox.Text;
-                int EmpMobileNumber = int.Parse(empMobileNum_textBox.Text);
+                string EmpMobileNumber = empMobileNum_textBox.Text;
                 string EmpEmail = empEmail_textBox.Text;
                 string EmpGender = empGender_comboBox.Text;
-                string EmpUserName = empUserName_textBox.Text;  
-                string EmpPassword = empPassword_textBox.Text;  
+                string EmpUserName = empUserName_textBox.Text;
+                string EmpPassword = empPassword_textBox.Text;
+
+                string inerstEmp = "insert into employee (enployee_name, phone, gender, employee_mail, username,pwd) values ('" + EmpName + "', '" + EmpMobileNumber + "', '" + EmpGender + "','" + EmpEmail + "', '" + EmpUserName + "', '" + EmpPassword + "')";
+                functionClass.setData(inerstEmp, "Employee successfully registered");
+
+                clearAll();
+                getNextFreeID();
+
             }
         }
-
-
-
-
-
-
-
-
 
         private void getNextFreeID()
         {
@@ -102,6 +101,15 @@ namespace HotelSoftware.User_Control
             empPassword_label.ForeColor = Color.FromArgb(19, 15, 64);
         }
 
+        private void clearAll()
+        {
+            empName_textBox.Clear();
+            empMobileNum_textBox.Clear();
+            empMobileNum_textBox.Clear();
+            empGender_comboBox.SelectedIndex = -1;
+            empUserName_textBox.Clear();
+            empPassword_textBox.Clear();
+        }
 
         private Boolean checkEmployeeRegister()
         {
@@ -185,6 +193,57 @@ namespace HotelSoftware.User_Control
             }
 
             return boolean;
+        }
+
+        private void tabEmployee_selectedIndex(object sender, EventArgs e)
+        {
+            if (Emp_tabControll.SelectedIndex == 1)
+            {
+                SetEmployeeData(empDetail_DataGridView);
+
+            }
+            else if (Emp_tabControll.SelectedIndex == 2)
+            {
+                SetEmployeeData(empDelete_DataGridView);
+
+            }
+        }
+
+
+        private void SetEmployeeData(DataGridView dataGridView)
+        {
+            string showEmpQuery = "Select * FROM employee";
+            DataSet dataSet = new DataSet();
+            dataGridView.DataSource = dataSet.Tables[0];
+        }
+
+        private void delEmployee_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(delID_textBox.Text) == false)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the employee: ", "Confirmation!", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        string deleteEmpQuery = "delete from employee where employee_id = " + delID_textBox.Text + "";
+                        functionClass.setData(deleteEmpQuery, "Delete successfully");
+                        tabEmployee_selectedIndex(this, null);
+
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void empDeleteID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

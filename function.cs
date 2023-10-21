@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace HotelSoftware
 {
     internal class function
     {
-        private string connectionString = "data source=.;database=test;integrated security =True";
-        private static bool databaseConnection = false;
+        private static bool databaseConnection = true;
 
-        private bool result = false;
 
 
         public SqlConnection getConnection()
         {
             SqlConnection sqlConnection = new SqlConnection();
-            sqlConnection.ConnectionString = "data source=.;database=test;integrated security =True; Timeout=2";
+            sqlConnection.ConnectionString = "data source=ARDI\\SQLEXPRESS;database=HotelSoftware_Database;integrated security =True; Timeout=2";
           
             //MessageBox.Show("TimeOut: " + sqlConnection.ConnectionTimeout.ToString());
 
@@ -70,7 +65,6 @@ namespace HotelSoftware
                 SqlConnection sqlConnection = getConnection();
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnection;
-                sqlConnection.Open();
                 sqlCommand.CommandText = query;
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
