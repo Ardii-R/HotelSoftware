@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
+
 
 namespace HotelSoftware.User_Control
 {
@@ -14,11 +7,11 @@ namespace HotelSoftware.User_Control
     {
 
         function functionClass = new function();
-        DataSet dataSet = new DataSet();
 
         public UC_CustomerDetails()
         {
             InitializeComponent();
+            search_comboBox.SelectedIndex = 0;
         }
 
         private void search_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,12 +27,12 @@ namespace HotelSoftware.User_Control
             }
             else if (search_comboBox.SelectedIndex == 1)
             {
-                query = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, customer.checkout, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE checkout is not NULL";
+                query = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, customer.checkout, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE Checkout_exit = 'YES'";
                 executeQuery(query);
             }
             else if (search_comboBox.SelectedIndex == 2)
             {
-                query = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, customer.checkout, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE checkout is NULL";
+                query = "Select customer.customer_id, customer.customer_name, customer.phone, customer.nationality, customer.gender, customer.birthday, customer.personal_id, customer.customer_address, customer.checkin, customer.checkout, rooms.roomNo, rooms.roomTyp, rooms.roomOptions, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid WHERE Checkout_exit = 'NO'";
                 executeQuery(query);
             }
         }
