@@ -56,7 +56,7 @@
             customerDetail_dataGridView.Location = new Point(17, 114);
             customerDetail_dataGridView.Name = "customerDetail_dataGridView";
             customerDetail_dataGridView.RowTemplate.Height = 25;
-            customerDetail_dataGridView.Size = new Size(922, 161);
+            customerDetail_dataGridView.Size = new Size(926, 161);
             customerDetail_dataGridView.TabIndex = 11;
             // 
             // error_label

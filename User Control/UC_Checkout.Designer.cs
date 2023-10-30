@@ -85,10 +85,10 @@
             checkout_dataGridView.BorderStyle = BorderStyle.Fixed3D;
             checkout_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             checkout_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            checkout_dataGridView.Location = new Point(15, 88);
+            checkout_dataGridView.Location = new Point(15, 70);
             checkout_dataGridView.Name = "checkout_dataGridView";
             checkout_dataGridView.RowTemplate.Height = 25;
-            checkout_dataGridView.Size = new Size(922, 103);
+            checkout_dataGridView.Size = new Size(922, 157);
             checkout_dataGridView.TabIndex = 10;
             checkout_dataGridView.CellContentClick += checkout_dataGridView_CellContentClick;
             // 
@@ -96,11 +96,12 @@
             // 
             nameCheckout_textBox.AllowDrop = true;
             nameCheckout_textBox.BackColor = Color.White;
+            nameCheckout_textBox.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             nameCheckout_textBox.Location = new Point(15, 249);
             nameCheckout_textBox.Margin = new Padding(2);
             nameCheckout_textBox.MaxLength = 35;
             nameCheckout_textBox.Name = "nameCheckout_textBox";
-            nameCheckout_textBox.PlaceholderText = "Enter full name";
+            nameCheckout_textBox.PlaceholderText = "Customer name";
             nameCheckout_textBox.ReadOnly = true;
             nameCheckout_textBox.Size = new Size(165, 23);
             nameCheckout_textBox.TabIndex = 12;
@@ -156,11 +157,12 @@
             // 
             roomNumbertextBox.AllowDrop = true;
             roomNumbertextBox.BackColor = Color.White;
+            roomNumbertextBox.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
             roomNumbertextBox.Location = new Point(301, 255);
             roomNumbertextBox.Margin = new Padding(2);
             roomNumbertextBox.MaxLength = 35;
             roomNumbertextBox.Name = "roomNumbertextBox";
-            roomNumbertextBox.PlaceholderText = "Enter room number";
+            roomNumbertextBox.PlaceholderText = "Room number";
             roomNumbertextBox.ReadOnly = true;
             roomNumbertextBox.Size = new Size(165, 23);
             roomNumbertextBox.TabIndex = 19;
